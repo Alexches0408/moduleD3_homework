@@ -1,0 +1,18 @@
+{% extends 'default.html' %}
+
+{% load custom_filters %}
+
+{% block title %} {{ post.title }} {% endblock title %}
+
+
+{% block content %}
+<div class="post">
+    <div class="post_title">{{post.title|censor:""}}</div>
+    <div class="post_pubdate">{{post.pub_date|date:'d-m-Y H:i'}}</div>
+    <div class="post_content">{{post.content|censor:""}}</div>
+    <div class="post_rating">{{post.rating}}</div>
+    <div class="post_author">{{post.author.user}}</div>
+</div>
+{% endblock content %}
+
+{% block footer %}{% endblock footer %}
